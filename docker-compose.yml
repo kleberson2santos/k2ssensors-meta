@@ -1,0 +1,14 @@
+services:
+  k2ssensors-rabbitmq:
+    image: rabbitmq:3-management
+    restart: "no"
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+    volumes:
+      - k2ssensors-rabbitmq:/var/lib/rabbitmq/
+volumes:
+  k2ssensors-rabbitmq:
